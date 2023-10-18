@@ -1,0 +1,16 @@
+<table border="1">
+    <caption>My To Do List</caption>
+<thead>
+    <tr>
+        <th>id</th>
+        <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+    //for(Todo todo:Todos)
+    <tr *ngFor="let todo of todos">
+        <td>{{todos.id}}</td>
+        <td>{{todos.Description}}</td>
+    </tr>
+</tbody>
+</table>
