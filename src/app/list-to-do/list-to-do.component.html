@@ -1,16 +1,22 @@
-<table border="1">
-    <caption>My To Do List</caption>
+<h1>My Todo's</h1>
+<div class="container">
+<table  class="table">
 <thead>
     <tr>
         <th>id</th>
         <th>Description</th>
+        <th>Target Date?</th>
+        <th>Is Completed</th>
     </tr>
 </thead>
-<tbody>
-    //for(Todo todo:Todos)
-    <tr *ngFor="let todo of todos">
-        <td>{{todos.id}}</td>
-        <td>{{todos.Description}}</td>
+<tbody>  
+    <!-- for(Todo todo:todos) -->
+    <tr *ngFor ="let todo of todos" >
+        <td>{{todo.id}}</td>
+        <td>{{todo.Description}}</td>
+        <td>{{todo.targetDate | date}}</td>  <!--in angular pipe(|) is used to convert data from one form to other -->
+        <td>{{todo.done}}</td>
     </tr>
 </tbody>
 </table>
+</div>

@@ -1,5 +1,6 @@
 import { Component, NgZoneOptions, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HardcodedAuthenticationService } from '../service/hardcoded-authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   invalidLogin=false
 
   handleLogin() {
-    if(this.username==='shivam' && this.password==="Shivam@123")
+    if(this.hardCodedAuthenticationService.authenticate(this.username,this.password))
     {
       this.router.navigate(['welcome',this.username])
       this.invalidLogin=false
@@ -31,6 +32,6 @@ export class LoginComponent implements OnInit {
 ngOnInit(): void {
   throw new Error('Method not implemented.');
 }
-constructor(private router:Router){}
+constructor(private router:Router,private hardCodedAuthenticationService:HardcodedAuthenticationService){}
 
 }

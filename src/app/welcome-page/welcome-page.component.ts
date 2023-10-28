@@ -14,5 +14,7 @@ constructor(private route:ActivatedRoute){}  //whichever route is active now..it
   //  console.log(this.route.snapshot.params['name']) //from the activated route which we got we would like to pickup the param name from it which is passed..params is a map name is a key
   this.name=this.route.snapshot.params['name']
   }
+  
 
 }
+

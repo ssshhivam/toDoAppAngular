@@ -1,6 +1,9 @@
-<small *ngIf="invalidLogin">  {{errorMessage}}</small>
-<div>
+<H4>Login To Your Account</H4>
+<div class="container">
+<div class="alert alert-warning"  *ngIf="invalidLogin">  {{errorMessage}}</div>
+<div class="login">
 Username:<input type="text" name="username" [(ngModel)]="username">
 Password:<input type="password" name="password" [(ngModel)]="password">
-<button (click)="handleLogin()">Login</button>
+<button (click)="handleLogin()" class="btn btn-success">Login</button>
+</div>
 </div>
