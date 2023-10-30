@@ -18,9 +18,9 @@ export class LoginComponent implements OnInit {
   handleLogin() {
     if(this.hardCodedAuthenticationService.authenticate(this.username,this.password))
     {
-      this.router.navigate(['welcome',this.username])
-      this.invalidLogin=false
-      console.log('user logged in successfully')
+      this.router.navigate(['welcome',this.username]);
+      this.invalidLogin=false;
+      console.log('user logged in successfully');
       
     }
     else
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     }
     }
 ngOnInit(): void {
-  throw new Error('Method not implemented.');
+  
 }
 constructor(private router:Router,private hardCodedAuthenticationService:HardcodedAuthenticationService){}
 

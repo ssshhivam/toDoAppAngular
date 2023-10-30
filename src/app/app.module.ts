@@ -11,6 +11,8 @@ import { ListToDOComponent } from './list-to-do/list-to-do.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { LogoutComponent } from './logout/logout.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,16 @@ import { HomeComponent } from './home/home.component';
     ListToDOComponent,
     MenuComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    LogoutComponent,
+
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   
   ],
   providers: [],
