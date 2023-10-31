@@ -1,6 +1,6 @@
 <p>welcome {{name}}..You are the best</p>
 <div class="container" *ngIf="errorMessage">{{errorMessage}}</div>
-<div>
+<div *ngIf="!errorMessage">
     Click Here to get Customized Welcome message
    <button (click)= "getWelcomeMessage()" class="btn btn-success"> WelcomeMessage</button>
    <div *ngIf="welcomeMessageFromService"> {{welcomeMessageFromService}}</div>

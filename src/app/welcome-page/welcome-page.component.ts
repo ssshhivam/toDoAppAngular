@@ -21,8 +21,8 @@ constructor(private route:ActivatedRoute,
   getWelcomeMessage()
   {
     console.log(this.serviceData.executeHelloBeanData());
-     this.serviceData.executeHelloBeanData()
-     .subscribe(response=>this.handleSuccessfulResponse(response),
+     this.serviceData.executeHelloBeanData() .subscribe(
+      response=>this.handleSuccessfulResponse(response),
       error=>this.handleErrorResponse(error));
     //console.log("welcome message through hellobean Executed")
 
@@ -34,7 +34,10 @@ handleSuccessfulResponse(response:any)
 }
 handleErrorResponse(error:any)
 {
-this.errorMessage=error.message
+  console.log(error)
+  console.log(error.error)
+  console.log(error.error.message)
+this.errorMessage=error.error.message
 }
 }
 
