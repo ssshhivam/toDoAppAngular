@@ -32,17 +32,20 @@ constructor(private route:ActivatedRoute,
   {
     console.log(this.serviceData.executeHelloBeanWithParam())
     this.serviceData.executeHelloBeanWithParam().subscribe(
-      response=>this.handleSuccesfulResponseForParam(response));
+      response=>this.handleSuccessfulResponseWithParams(response));
   }
 handleSuccessfulResponse(response:any)
 {
   this.welcomeMessageFromService=response.message
   
 }
-handleSuccesfulResponseForParam(response:any)
+handleSuccessfulResponseWithParams(response:any)
 {
-  this.WelcomeMessageFromServiceWithParams=response
+  this.WelcomeMessageFromServiceWithParams=response.messagee
+  //this.WelcomeMessageFromServiceWithParams=response.name
+  
 }
+
 handleErrorResponse(error:any)
 {
   console.log(error)
