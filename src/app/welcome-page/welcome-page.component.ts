@@ -10,6 +10,7 @@ import { WelcomeDataService } from '../service/data/welcome-data.service';
 export class WelcomePageComponent implements OnInit {
 name=''
 welcomeMessageFromService:string=''
+WelcomeMessageFromServiceWithParams:any
 errorMessage:String=''
 constructor(private route:ActivatedRoute,
   private serviceData:WelcomeDataService){}  //whichever route is active now..it would give and from there we can get the parameters we want
@@ -27,10 +28,20 @@ constructor(private route:ActivatedRoute,
     //console.log("welcome message through hellobean Executed")
 
   }
+  getWelcomeMessageWithParam()
+  {
+    console.log(this.serviceData.executeHelloBeanWithParam())
+    this.serviceData.executeHelloBeanWithParam().subscribe(
+      response=>this.handleSuccesfulResponseForParam(response));
+  }
 handleSuccessfulResponse(response:any)
 {
   this.welcomeMessageFromService=response.message
   
+}
+handleSuccesfulResponseForParam(response:any)
+{
+  this.WelcomeMessageFromServiceWithParams=response
 }
 handleErrorResponse(error:any)
 {

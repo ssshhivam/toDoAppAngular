@@ -12,6 +12,10 @@ export class WelcomeDataService {
     return  this.httpclient.get('http://localhost:8080/helloBean');
     
   }
+  executeHelloBeanWithParam()
+  {
+    return this.httpclient.get('http://localhost:8080/helloBean/shivam');
+  }
 }
 export class HelloBeanResponseFormat{
   constructor(private message:String){}
